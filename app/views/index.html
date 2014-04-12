@@ -22,6 +22,7 @@
     <!-- endbuild -->
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
 
   </head>
   <body ng-app="hackApp">
@@ -29,23 +30,24 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="header">
-      <span class="tk-bebas-neue">WALTER</span>
-    </div>
-
-    <div class="container-fluid" ng-controller="RowCtrl">
+    <div class="header" ng-controller="WalterCtrl" ng-click="walter()">
+      <div class="koles-dick"></div>
       <div class="live">
-        <i class="fa fa-dot-circle-o"></i>
+        <div class="spot"> <i class="fa fa-bell-o"></i> </div>
         <!--
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="in fa fa-lemon-o fa-stack-1x"></i>
         </span>
       -->
+        <span class="tk-bebas-neue">WALTER</span>
       </div>
+    </div>
+
+    <div class="container-fluid" ng-controller="RowCtrl">
       <div class="row">
         <nav class="col-animate"></nav>
-        <div class="col-animate main col-md-6" ng-class="{'col-md-offset-3': full, 'col-md-offset-4': !full}">
+        <div class="col-animate main col-md-8" ng-class="{'col-md-offset-2': full, 'col-md-offset-3': !full}">
           <div ng-view=""></div>
         </div>
       </div>
@@ -77,6 +79,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -91,9 +94,10 @@
         <script src="scripts/services/VoiceControl.js"></script>
         <script src="scripts/services/Talk.js"></script>
         <script src="scripts/controllers/Row.js"></script>
+        <script src="scripts/controllers/Walter.js"></script>
         <!-- endbuild -->
 
-        <!-- <script type="text/javascript" src="//use.typekit.net/wcg1nme.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+        <script type="text/javascript" src="//use.typekit.net/wcg1nme.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </body>
 </html>

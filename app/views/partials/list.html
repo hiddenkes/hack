@@ -3,9 +3,7 @@
 </div>
 
 <div class="news-holder">
-  <div class="hover-scroll up" ng-mousemove="scrollUp($event)" ng-mouseleave="noScroll()"></div>
-  <div class="animate-repeat" ng-repeat="item in news" style="transition-delay: {{$index * 320}}ms; -webkit-transition-delay: {{$index * 320}}ms;">
-    <news-component image="'http://upload.wikimedia.org/wikipedia/commons/a/af/WhiteHouseSouthFacade.JPG'" title="item.title" short="" paragraph="item.summary"></news-component>
+  <div class="animate-repeat" ng-repeat="item in news" style="transition-delay: {{$index/2 * 320}}ms; -webkit-transition-delay: {{$index/2 * 320}}ms;">
+    <news-component image="item.image" ntitle="item.title" summary="item.summary" full="item.fulltext"></news-component>
   </div>
-  <div class="hover-scroll down" ng-mousemove="scrollDown($event)" ng-mouseleave="noScroll()"></div>
 </div>

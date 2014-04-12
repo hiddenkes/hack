@@ -68,8 +68,6 @@ angular.module('hackApp')
 
         var scroll = function(){
           if(scrolling === true){
-            console.log('move baby!');
-            console.log($body.scrollTop());
             var inc = direction === 'up' ? -1 * scale : scale;
             var ntop = $body.scrollTop() + inc;
             $body.scrollTop(ntop);
