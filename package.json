@@ -4,7 +4,12 @@
   "dependencies": {
     "express": "~3.4.3",
     "lodash": "~2.4.1",
-    "ejs": "~0.8.4"
+    "ejs": "~0.8.4",
+    "node-summary": "~1.0.0",
+    "html-to-text": "0.0.8",
+    "npm": "~1.4.6",
+    "install": "~0.1.7",
+    "node-sumuparticles": "0.0.5"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

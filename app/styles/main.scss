@@ -1,87 +1,409 @@
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+//Bad boy:
+.typekit-badge {display:none !important;}
 
-/* Space out content a bit */
+html {
+    height: 100%;
+}
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  min-height: 100%;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+.col-animate {
+  transition: all 0.5s ease;
 }
 
-/* Custom page header */
+.tk-bebas-neue {
+  font-family: 'Bebas Neue', 'Helvetica', Arial, sans-serif !important;
+}
+
+.anim-all {
+  transition: all 0.5s ease;
+}
+
+.live {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  opacity: 0.3;
+  color: #fff;
+  font-size: 3em;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 5000;
+  .in {
+    color: #000;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.one-line {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.noHeight {
+  height: 0px !important;
+  line-height: 0px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.news-component {
+  height: 100px;
+  opacity: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .header {
-    border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  span {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.3);
+  }
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.news-holder {
+  position: relative;
+  overflow: scroll;
+  height: 100%;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+.hover-scroll {
+  z-index: 100;
+  position: fixed;
+  width: 82%;
+  left: 18%;
+  right: 0;
+  height: 75px;
+  &.up {
+    top: 0;
+  }
+  &.down {
+    bottom: 0;
+  }
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
+.news-expanded {
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
+  background: #000;
+  .image {
+    opacity: 0.25;
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-size: cover;
+    background-position: center center;
+    /*background-attachment: fixed;
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -ms-filter: blur(8px);
+    -o-filter: blur(8px);
+    filter: blur(8px);*/
+  }
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+
+a {
+  cursor: pointer;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+.full {
+  padding: 2px 12px;
+}
+.expand {
+  display: inline-block;
+  padding: 2px 15px;
+  font-size: 16px;
+  text-align: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
+
+//THEME:
+
+body {
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  color: #E6E6E6;
+  background-color: #1D222C;
 }
 
-.marketing p + h4 {
-    margin-top: 28px;
+
+.animate-repeat {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 80px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  top: -20px;
+  opacity: 0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  top: 0px;
+  opacity:1;
+}
+
+
+
+
+/*
+ * Base structure
+ */
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-trans {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  &:hover {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+
+serious-header {
+  .h {
+    font-size: 10em;
+  }
+  p {
+    margin-bottom: 50px;
+    font-size: 1.5em;
+  }
+  margin-top: 100px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: transparent;
+
+    font-size: 15px;
+
+    transition: all 0.5s ease;
+
+    border-right: 1px solid rgba(255, 255, 255, 0);
+
+    .add {
+      //margin-left: -15px;
+      //margin-right: -15px;
+      opacity: 0.7;
+      min-width: 250px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      input {
+        background: transparent;
+        border: none;
+        padding: 10px;
+        width: 150px;
+        outline: none;
+        &:focus {
+
+        }
+      }
     }
 
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
+    .bar-menu {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      .bar {
+        visibility: visible !important;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 1px;
+        width: 20px;
+        height: 3px;
+        margin-top: 3px;
+      }
     }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
+
+    .sub {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 26px;
+      transition: all 0.5s ease;
+      visibility: hidden;
+      opacity: 0;
+      position: relative;
+
+      .scroll-hover-side {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 50px;
+        z-index: 1200;
+
+        &.up {
+        }
+        &.down {
+          bottom: 50px;
+        }
+      }
+
+      .settings {
+        padding: 20px;
+      }
+      .sm {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        flex: 1;
+        margin-right: -21px; /* 20px padding + 1px border */
+        margin-bottom: 20px;
+        margin-left: -20px;
+      }
     }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
+
+    &.out {
+      .sub {
+        visibility: visible;
+        opacity: 1;
+      }
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
     }
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+}
+.nav-sidebar > li {
+  transition: 0.5s ease;
+  left: 0px;
+  top: 0px;
+  a {
+    padding-right: 20px;
+    padding-left: 20px;
+    min-width: 200px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    padding: 20px;
+    left: 0px;
+    &:hover {
+      background: transparent;
+      left: 15px;
+    }
+  }
+}
+.nav-sidebar > .active > a {
+  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.05);
+  &:hover {
+    text-decoration: underline;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.page-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding-top: 50px !important;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0s;
+
+  display:block;
+  width:100%;
+  border-left:1px solid black;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:10px;
+}
+
+.view-animate.ng-enter {
+}
+.view-animate.ng-enter.ng-enter-active {
+}
+.view-animate.ng-leave.ng-leave-active {
 }

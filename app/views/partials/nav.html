@@ -1,0 +1,44 @@
+<div class="sidebar" ng-class="{'col-md-3 out': expanded, 'col-md-1': !expanded}" ng-mouseenter="expand(true)" ng-mouseleave="expand(false)">
+  <div class="bar-menu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div class="sub">
+
+    <div class="add">
+      <i class="fa fa-plus"></i> <input type="text" placeholder="Add Interest..." ng-submit="addInterest()">
+    </div>
+
+    <div class="scroll-hover-side up" ng-mousemove="scrollUp($event)" ng-mouseleave="noScroll()"></div>
+
+    <div class="sm">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">Overview</a></li>
+        <li><a ng-click="show($event)">Reports</a></li>
+        <li><a>Analytics</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+        <li><a>Export</a></li>
+      </ul>
+    </div>
+
+    <div class="scroll-hover-side down" ng-mousemove="scrollDown($event)" ng-mouseleave="noScroll()"></div>
+
+    <a href="/settings" class="settings">
+      <i class="fa fa-cog"></i> Settings
+    </a>
+  </div>
+</div>

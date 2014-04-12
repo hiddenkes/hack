@@ -1,0 +1,30 @@
+<div class="media news-component" ng-hide="expanded">
+	<a class="pull-left" href="#">
+    <img class="media-object" ng-src="{{image}}" width="50" height="50">
+  </a>
+	<div class="media-body">
+		<h4 class="media-heading">{{title}}</h4>
+		<p class="one-line">{{short}}</p>
+
+		<div class="media-show">
+			<div class="pull-left show" ng-show="expanded">
+				{{paragraph}}
+			</div>
+			<div class="pull-right">
+				<a href="#" class="full">Full</a>
+				<a class="expand" ng-click="expand()" ng-hide="expanded"><span class="fa fa-ellipsis-v"></span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="news-expanded animated" ng-show="expanded" ng-class="{'flipInX': expanded}">
+	<div class="image" style="background-image: url('{{image}}')"></div>
+
+	<h3>{{title}}</h3>
+	<p>{{paragraph}}</p>
+
+	<div class="pull-right">
+		<a href="#" class="full">Full</a>
+	</div>
+</div>

@@ -13,20 +13,43 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
   </head>
   <body ng-app="hackApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="header">
+      <span class="tk-bebas-neue">WALTER</span>
+    </div>
+
+    <div class="container-fluid" ng-controller="RowCtrl">
+      <div class="live">
+        <i class="fa fa-dot-circle-o"></i>
+        <!--
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="in fa fa-lemon-o fa-stack-1x"></i>
+        </span>
+      -->
+      </div>
+      <div class="row">
+        <nav class="col-animate"></nav>
+        <div class="col-animate main col-md-6" ng-class="{'col-md-offset-3': full, 'col-md-offset-4': !full}">
+          <div ng-view=""></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -53,6 +76,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -60,6 +84,16 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/navbar.js"></script>
+        <script src="scripts/controllers/watch.js"></script>
+        <script src="scripts/directives/nav.js"></script>
+        <script src="scripts/controllers/list.js"></script>
+        <script src="scripts/directives/newsComponent.js"></script>
+        <script src="scripts/services/VoiceControl.js"></script>
+        <script src="scripts/services/Talk.js"></script>
+        <script src="scripts/controllers/Row.js"></script>
         <!-- endbuild -->
+
+        <!-- <script type="text/javascript" src="//use.typekit.net/wcg1nme.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 </body>
 </html>
