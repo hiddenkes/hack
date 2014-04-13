@@ -15,12 +15,14 @@ angular.module('hackApp')
         scope.expanded = false;
         scope.full = false;
 
+        scope.fulltextNoP = angular.copy(scope.fulltext);
+
         scope.fulltext = '<p>' + scope.fulltext.split('\n').join('</p><p>') + '</p>';
 
         scope.talk = function(){
           Talk.queue(scope.title);
           if(scope.full){
-            Talk.queue(scope.fulltext);
+            Talk.queue(scope.fulltextNoP);
           }else{
             _.each(scope.summary, function(sum){
               Talk.queue(sum);
