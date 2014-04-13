@@ -18,6 +18,10 @@ body {
   font-family: 'Bebas Neue', 'Helvetica', Arial, sans-serif !important;
 }
 
+.no-pointer {
+  pointer-events: none;
+}
+
 .anim-all {
   transition: all 0.5s ease;
 }
@@ -74,7 +78,7 @@ body {
   width: 40%;
   z-index: 5000;
   &:hover {
-    top: 0;
+    top: -15px;
     opacity: 0.8;
   }
   span {

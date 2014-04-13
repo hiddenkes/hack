@@ -11,18 +11,25 @@ angular.module('hackApp')
 
         var timeout = false;
 
-        scope.show = function($event){
+        scope.interests = ['Sports', 'Science', 'Dogecoin', 'Politics', 'Technology', 'Business'];
+        scope.interests.sort();
+
+        scope.show = function(url, $event){
           $($event.target).parent().addClass('active-new');
           scope.expanded = false;
           $rootScope.$broadcast('nav-expand', {expanded: scope.expanded});
           $timeout(function(){
-            $($event.target).parent().removeClass('active-new');
-            $location.path('/list/test');
+            $location.path('/list/' + url);
           }, 500);
         };
 
         scope.addInterest = function(){
-          //TODO:
+          if(scope.inputModel && scope.inputModel.trim().length >= 2){
+            scope.interests.push(scope.inputModel);
+            scope.interests.sort();
+            scope.inputModel = '';
+            //TODO: firebase
+          }
         };
 
         scope.expand = function(op){
@@ -44,6 +51,13 @@ angular.module('hackApp')
         var $body = $(element).find('.sm').first();
         var scrolling = false, direction;
         var scale = 0;
+
+        scope.topScroll = 0;
+        $body.scroll(function(){
+          console.log(scope.topScroll);
+          scope.topScroll = $body.scrollTop();
+        });
+
         scope.noScroll = function(){
           scrolling = false;
           direction = false;

@@ -34,7 +34,6 @@ angular.module('hackApp')
           self.process();
         }else{
           processing = false;
-          this.end();
         }
       });
     }
@@ -58,7 +57,7 @@ angular.module('hackApp')
           var v = voices[i];
           if(v.name.toLowerCase().indexOf('male') >= 0){
             voice = v;;
-          }else if(v.name === 'Alex'){
+          }else if(v.name === 'Daniel'){
             voice = v;
           }
         }

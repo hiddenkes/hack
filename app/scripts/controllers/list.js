@@ -7,8 +7,8 @@ angular.module('hackApp')
     $rootScope.interest = $scope.interest;
     $timeout(function() {
       $http.get('/api/story/' + $scope.interest).success(function(data){
-        $scope.news = data.articles;
-        $rootScope.articles = data.articles;
+        $scope.news = data.articles.filter(Boolean);
+        $rootScope.articles = data.articles.filter(Boolean);
       });
     }, 800);
 
