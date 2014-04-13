@@ -46,6 +46,14 @@ body {
   opacity: 1;
 }
 
+.loading {
+  text-align: center;
+  font-size: 1.15em;
+  i {
+    font-size: 3em;
+  }
+}
+
 .controls a {
   color: rgba(255, 255, 255, 0.3);
   color: rgba(182, 182, 182, 0.55);

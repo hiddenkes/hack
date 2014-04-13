@@ -3,6 +3,11 @@
 </div>
 
 <div class="news-holder">
+  <div class="loading" ng-show="started">
+    <i class="fa fa-spinner fa-spin"></i>
+    <h1>Generating News List</h1>
+    <p>We are currently generating news lists for you. <div>This process can time up to a minute to complete.</div></p>
+  </div>
   <div class="animate-repeat" ng-repeat="item in news" style="transition-delay: {{$index/2 * 320}}ms; -webkit-transition-delay: {{$index/2 * 320}}ms;">
     <news-component image="item.image" ntitle="item.title" summary="item.summary" full="item.fulltext"></news-component>
   </div>
