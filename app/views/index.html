@@ -30,7 +30,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="header" ng-controller="WalterCtrl" ng-click="walter()">
+    <div class="header" ng-class="{'rock': active}" ng-controller="WalterCtrl" ng-click="walter()">
       <div class="koles-dick"></div>
       <div class="live">
         <div class="spot"> <i class="fa fa-bell-o"></i> </div>
@@ -100,8 +100,10 @@
         <script src="scripts/controllers/Walter.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
-
+        
+      <!--
         <script type="text/javascript" src="//use.typekit.net/wcg1nme.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+      -->
 </body>
 </html>

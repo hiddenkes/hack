@@ -7,17 +7,30 @@ angular.module('hackApp')
 
     var greeted = false;
 
+    $scope.active = false;
+
+    $scope.$on('walter-start', function(){
+      $scope.active = true;
+    });
+    $scope.$on('walter-stop', function(){
+      $scope.active = false;
+    });
+
     //Kick off walter:
     $scope.walter = function(){
-      if (!started){
+      if (!started && !$scope.active){
         started = true;
 
-        if(!greeted){
+        if(!greeted && $rootScope.user){
           greeted = true;
-          Talk.greet('Andy');
+          Talk.greet($rootScope.user.name);
         }
 
-        if(!$rootScope.interest){
+        if(!$rootScope.user){
+          Talk.queue('Click the button below to get started.');
+          started = false;
+          return;
+        }else if(!$rootScope.interest){
           Talk.queue('Move your mouse to the left of the page to select your interests.');
           started = false;
           return;

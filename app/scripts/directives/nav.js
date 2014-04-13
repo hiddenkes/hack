@@ -19,6 +19,7 @@ angular.module('hackApp')
           scope.expanded = false;
           $rootScope.$broadcast('nav-expand', {expanded: scope.expanded});
           $timeout(function(){
+            if(url === '/') return;
             $location.path('/list/' + url);
           }, 500);
         };

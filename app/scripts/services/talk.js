@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hackApp')
-  .service('Talk', function Talk($q, $compile, $timeout) {
+  .service('Talk', function Talk($q, $compile, $timeout, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     this.rate = 1;
@@ -23,6 +23,7 @@ angular.module('hackApp')
       arr.push(text);
       if(!processing){
         processing = true;
+        $rootScope.$broadcast('walter-start');
         var self = this;
         $timeout(function(){
           self.process();
@@ -34,11 +35,12 @@ angular.module('hackApp')
       var self = this;
       $timeout(function(){
         self.talk(arr.shift()).then(function(){
-          console.log('done');
           $timeout(function(){
+            arr = _.filter(arr, function(n){ return !!n; });
             if(arr.length > 0){
               self.process();
             }else{
+              $rootScope.$broadcast('walter-stop');
               processing = false;
             }
           }, 100);
@@ -54,7 +56,7 @@ angular.module('hackApp')
       u.lang = this.lang;
       u.pitch = this.pitch;
       u.onend = function(event) { $timeout(function(){
-        def.resolve();
+        def.resolve(true);
       }, 100); }
       var voices = speechSynthesis.getVoices();
 

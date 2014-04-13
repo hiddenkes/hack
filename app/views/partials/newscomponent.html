@@ -1,9 +1,9 @@
 <div class="media news-component" ng-hide="expanded || full">
-	<a class="pull-left" href="#">
-    <img class="media-object" ng-src="{{image}}" width="50" height="50">
+	<a class="pull-left" ng-click="expand()">
+    <div class="image" style="background-image: url('{{image}}')"></div>
   </a>
 	<div class="media-body">
-		<h4 class="media-heading">{{title}}</h4>
+		<h3 class="media-heading" ng-click="expand()">{{title}}</h3>
 
 		<div class="pull-right controls">
 			<a class="full" ng-click="gofull()" ng-hide="full">View Full Article</a>

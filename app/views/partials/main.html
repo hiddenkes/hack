@@ -1,5 +1,9 @@
-<serious-header>
-  <div class="h tk-bebas-neue">WALTER</div>
+<serious-header ng-init="start = true;">
   <p>Your personal news companion.</p>
-  <a href="#" class="btn btn-trans">Get Started</a>
+  <div class="h tk-bebas-neue">WALTER</div>
+  <hr />
+  <a ng-show="start" ng-click="activ($event)"  href="#" class="btn btn-trans btn-lg">Get Started</a>
+  <form ng-hide="start" ng-submit="go()">
+    <input class="btn btn-trans btn-lg" ng-model="name" placeholder="Enter Your Name"  />
+  </form>
 </serious-header>

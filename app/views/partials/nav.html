@@ -15,6 +15,7 @@
 
     <div class="sm">
       <ul class="nav nav-sidebar">
+        <li ng-click="show('/', $event)"><a href="/">Home</a></li>
         <li ng-repeat="item in interests" ng-click="show(item, $event)"><a>{{item}}</a></li>
       </ul>
     </div>
