@@ -23,19 +23,27 @@ angular.module('hackApp')
       arr.push(text);
       if(!processing){
         processing = true;
-        this.process();
+        var self = this;
+        $timeout(function(){
+          self.process();
+        }, 100);
       }
     };
 
     this.process = function(){
       var self = this;
-      this.talk(arr.shift()).then(function(){
-        if(arr.length > 0){
-          self.process();
-        }else{
-          processing = false;
-        }
-      });
+      $timeout(function(){
+        self.talk(arr.shift()).then(function(){
+          console.log('done');
+          $timeout(function(){
+            if(arr.length > 0){
+              self.process();
+            }else{
+              processing = false;
+            }
+          }, 100);
+        });
+      }, 200);
     }
 
     this.talk = function(text){
@@ -45,7 +53,9 @@ angular.module('hackApp')
       u.rate = this.rate;
       u.lang = this.lang;
       u.pitch = this.pitch;
-      u.onend = function(event) { console.log(event); def.resolve(event); }
+      u.onend = function(event) { $timeout(function(){
+        def.resolve();
+      }, 100); }
       var voices = speechSynthesis.getVoices();
 
       $timeout(function(){
