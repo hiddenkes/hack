@@ -23,10 +23,12 @@ angular.module('hackApp')
           Talk.queue(scope.title);
           if(scope.full){
             Talk.queue(scope.fulltextNoP);
+            Talk.queue('And that\'s the way it is.');
           }else{
             _.each(scope.summary, function(sum){
               Talk.queue(sum);
             });
+            Talk.queue('And that\'s the way it is.');
           }
         };
 

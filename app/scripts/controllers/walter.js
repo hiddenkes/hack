@@ -57,6 +57,8 @@ angular.module('hackApp')
           _.each(article.summary, function(sum){
             Talk.queue(sum);
           });
+
+          Talk.queue('And that\'s the way it is.');
         });
       }else{
         Talk.stop();

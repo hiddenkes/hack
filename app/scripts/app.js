@@ -26,6 +26,10 @@ angular.module('hackApp', [
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
       })
+      .when('/settings', {
+        templateUrl: 'partials/settings',
+        controller: 'SettingsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
