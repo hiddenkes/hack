@@ -1,1 +1,35 @@
-<p>This is the settings view.</p>
+<h2>Settings</h2>
+<hr>
+
+<form role="form" ng-submit="login()">
+
+  <div class="row">
+    <div class="col-md-3"><h4>Name</h4></div>
+    <div class="col-md-9"><input type="text" class="form-control" ng-model="username"/></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3"><h4>Voice Page</h4></div>
+    <div class="col-md-9">
+      <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" ng-click="pace(1)">1</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" ng-click="pace(2)">2</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" ng-click="pace(3)">3</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" ng-click="pace(4)">4</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" ng-click="pace(5)">5</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="btn btn-default" ng-click="save()">Save Settings</a> 
+</form>
