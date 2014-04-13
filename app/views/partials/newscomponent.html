@@ -1,3 +1,4 @@
+
 <div class="media news-component" ng-hide="expanded || full">
 	<a class="pull-left" ng-click="expand()">
     <div class="image" style="background-image: url('{{image}}')"></div>
@@ -11,7 +12,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="news-expanded animated" ng-show="expanded || full" ng-class="{'flipInX': expanded, 'fullio bounceIn': full}">
 	<div class="image" style="background-image: url('{{image}}')"></div>
 
@@ -24,9 +24,9 @@
 			<li ng-repeat="item in summary">{{item}}</li>
 		</ul>
 	</p>
+	<comments ng-show="chat" articleid="mdh"></comments>
 
 	<div class="pull-right controls">
-		<a class="full" ng-click="gofull()" ng-hide="full">View Full Article</a>
-		<a class="expand" ng-click="talk()"><span class="fa fa-bell-o"></span></a>
+		<a class="full" ng-click="gofull()" ng-hide="full">View Full Article</a><a class="expand" ng-click="toggleChat()"><span class="fa fa-comment-o"></span></a><a class="expand" ng-click="talk()"><span class="fa fa-bell-o"></span></a>
 	</div>
 </div>

@@ -22,6 +22,17 @@ body {
   pointer-events: none;
 }
 
+.comment {
+  overflow-y:scroll;
+  height: 200px;
+}
+
+.inin {
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
 .anim-all {
   transition: all 0.5s ease;
 }
