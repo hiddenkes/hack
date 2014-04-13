@@ -1,0 +1,11 @@
+
+
+
+function tokenizeSentence(sentence, callback) {
+  sentence = sentence.replace(/[,.\s]+/g, '');
+  callback(sentence.split(' '));
+}
+
+function splitContentToParagraphs(content, callback) {
+	callback(content.split('\n'));
+}

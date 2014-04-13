@@ -1,1 +1,19 @@
-<p>This is the login view.</p>
+<div style="height: 50px"></div>
+<div ng-show="registerFail">
+  <p>Registration Failed!</p>
+</div>
+<form role="form" ng-submit="login()">
+   <div class="form-group">
+        <label for="emailInput">Email address</label>
+        <input ng-model="loginForm.email" class="form-control" id="emailInput" placeholder="Enter email" type="email">
+   </div>
+   <div class="form-group">
+        <label for="passwordInput">Password</label>
+        <input ng-model="loginForm.password" class="form-control" id="passwordInput" placeholder="Password" type="password">
+   </div>
+   <div class="checkbox">
+	   	<label><input ng-model="loginForm.remember" type="checkbox">Remember Me</label>
+   </div>
+   <input type="submit" class="btn btn-default" value="Login">
+   <button type="button" class="btn btn-danger" ng-click="register()">Register</button>
+</form>

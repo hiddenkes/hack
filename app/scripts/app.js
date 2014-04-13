@@ -5,7 +5,8 @@ angular.module('hackApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngAnimate'
+  'ngAnimate',
+  'firebase'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
