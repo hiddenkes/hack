@@ -1,0 +1,12 @@
+<hr/>
+<div class="row comment">
+	<div class="media" ng-repeat="comment in comments | orderBy:'dt'">
+		<div class="media-object">
+			<h4 class="media-heading">{{comment.username}}</h4>
+			<p>{{comment.comment}}</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<input type="text" class="btn btn-trans btn-block inin" ng-keypress="addComment($event)" ng-model="commentText" placeholder="Add Comment..."/>
+</div>
